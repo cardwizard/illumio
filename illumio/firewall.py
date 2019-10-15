@@ -30,7 +30,6 @@ class Firewall:
         Uses chain rule to filter by different parameters.
         Direction and protocol has been clubbed into 1.
         """
-
         filtered_rules = self.rules.filter_by_dp_index(direction, protocol).filter_by_port(port).filter_by_ip(ip_address)
 
         # Check if it matches any rule

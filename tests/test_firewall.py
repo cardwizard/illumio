@@ -24,6 +24,15 @@ def test_basic() -> None:
     assert fw.accept_packet("inbound", "udp", 24, "52.12.48.92") is False
 
 
+def test_nothing_allowed() -> None:
+    fw = Firewall("tests/cases/nothing_allowed.csv")
+    assert fw.accept_packet("inbound", "tcp", 80, "192.168.1.2") is False
+    assert fw.accept_packet("inbound", "udp", 53, "192.168.2.1") is False
+    assert fw.accept_packet("outbound", "tcp", 10234, "192.168.10.11") is False
+    assert fw.accept_packet("inbound", "tcp", 81, "192.168.1.2") is False
+    assert fw.accept_packet("inbound", "udp", 24, "52.12.48.92") is False
+
+
 def test_all_allowed() -> None:
     fw = Firewall("tests/cases/all_allowed.csv")
 
