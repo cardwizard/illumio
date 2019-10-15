@@ -60,6 +60,7 @@ pytest .
 ## Future optimizations
 
 The search in the port range and IP range is pretty basic as of now and has a lot of potential for improvement. A simple numpy filtering itself can improve the performance by orders of magnitude. Other optimization ideas are:
+
     - Sorting the ports/IPs by their end range and using binary search to narrow down the range.
     - Parallelly searching for the ranges using threads (Python has amazing support in JobLib)
     - Automatically reordering the filters to find the optimal search pattern.
