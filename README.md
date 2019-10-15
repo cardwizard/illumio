@@ -1,5 +1,5 @@
 # Illumio
-Pure python implementation of a Firewall class.
+Pure python implementation of the Firewall class.
 `Python > 3.5`
 
 ## Usage
